@@ -3,7 +3,7 @@
              x:Class="Dotnetstore.Management.UI.GUI.App"
              xmlns:local="using:Dotnetstore.Management.UI.GUI"
              xmlns:fa="using:FluentAvalonia.Styling"
-             RequestedThemeVariant="Default">
+             RequestedThemeVariant="Dark">
              <!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
 
     <Application.DataTemplates>

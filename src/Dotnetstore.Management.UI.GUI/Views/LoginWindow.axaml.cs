@@ -8,4 +8,10 @@ public partial class LoginWindow : Window
     {
         InitializeComponent();
     }
+
+    protected override void OnOpened(EventArgs e)
+    {
+        base.OnOpened(e);
+        EmailTextBox.Focus();
+    }
 }

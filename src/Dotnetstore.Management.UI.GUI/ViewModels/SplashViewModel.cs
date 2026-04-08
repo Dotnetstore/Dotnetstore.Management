@@ -9,7 +9,7 @@ public sealed partial class SplashViewModel(
     INavigationService navigation) : ViewModelBase
 {
     [ObservableProperty]
-    private double _progress;
+    private double _progressValue;
 
     [ObservableProperty]
     private string _statusMessage = "Starting up...";
@@ -23,7 +23,7 @@ public sealed partial class SplashViewModel(
         {
             var progress = new Progress<InitializationProgress>(p =>
             {
-                Progress = p.Value * 100.0;
+                ProgressValue = p.Value * 100.0;
                 StatusMessage = p.Message;
             });
 

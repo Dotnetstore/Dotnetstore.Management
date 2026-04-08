@@ -1,28 +1,76 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:vm="using:Dotnetstore.Management.UI.GUI.ViewModels"
-        xmlns:ui="using:FluentAvalonia.UI.Controls"
         x:Class="Dotnetstore.Management.UI.GUI.Views.SplashWindow"
         x:DataType="vm:SplashViewModel"
         Title="Dotnetstore.Management"
-        Width="520" Height="300"
+        Width="560" Height="320"
         CanResize="False"
         WindowStartupLocation="CenterScreen"
-        WindowDecorations="BorderOnly">
-    <Grid RowDefinitions="*,Auto,Auto,Auto" Margin="40">
-        <StackPanel Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" Spacing="8">
-            <TextBlock Text="Dotnetstore.Management"
-                       FontSize="28" FontWeight="SemiBold"
-                       HorizontalAlignment="Center"/>
-            <TextBlock Text="Starting up..."
-                       Opacity="0.7"
-                       HorizontalAlignment="Center"/>
-        </StackPanel>
-        <ProgressBar Grid.Row="1" Minimum="0" Maximum="100" Value="{Binding Progress}" Height="6"/>
-        <TextBlock Grid.Row="2" Margin="0,8,0,0" Text="{Binding StatusMessage}" Opacity="0.8"/>
-        <TextBlock Grid.Row="3" Margin="0,8,0,0"
-                   Text="{Binding ErrorMessage}"
-                   Foreground="IndianRed"
-                   IsVisible="{Binding ErrorMessage, Converter={x:Static ObjectConverters.IsNotNull}}"/>
-    </Grid>
+        SystemDecorations="BorderOnly"
+        TransparencyLevelHint="AcrylicBlur"
+        Background="Transparent">
+    <Panel>
+        <ExperimentalAcrylicBorder IsHitTestVisible="False">
+            <ExperimentalAcrylicBorder.Material>
+                <ExperimentalAcrylicMaterial BackgroundSource="Digger"
+                                             TintColor="#0B1020"
+                                             TintOpacity="1"
+                                             MaterialOpacity="0.75"/>
+            </ExperimentalAcrylicBorder.Material>
+        </ExperimentalAcrylicBorder>
+
+        <Border CornerRadius="12" BorderThickness="1" BorderBrush="#22FFFFFF" Margin="1">
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0%,0%" EndPoint="100%,100%">
+                    <GradientStop Offset="0" Color="#1A1F3A"/>
+                    <GradientStop Offset="1" Color="#0B1020"/>
+                </LinearGradientBrush>
+            </Border.Background>
+
+            <Grid RowDefinitions="*,Auto,Auto,Auto" Margin="48,40">
+                <StackPanel Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" Spacing="10">
+                    <Border Width="64" Height="64" CornerRadius="16"
+                            HorizontalAlignment="Center">
+                        <Border.Background>
+                            <LinearGradientBrush StartPoint="0%,0%" EndPoint="100%,100%">
+                                <GradientStop Offset="0" Color="#6366F1"/>
+                                <GradientStop Offset="1" Color="#8B5CF6"/>
+                            </LinearGradientBrush>
+                        </Border.Background>
+                        <TextBlock Text="D" FontSize="34" FontWeight="Bold"
+                                   Foreground="White"
+                                   HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                    <TextBlock Text="Dotnetstore.Management"
+                               FontSize="26" FontWeight="SemiBold"
+                               Foreground="#F5F7FF"
+                               HorizontalAlignment="Center"/>
+                    <TextBlock Text="Loading your workspace..."
+                               Foreground="#8B93B8"
+                               FontSize="13"
+                               HorizontalAlignment="Center"/>
+                </StackPanel>
+
+                <ProgressBar Grid.Row="1" Minimum="0" Maximum="100"
+                             Value="{Binding ProgressValue}"
+                             Height="4"
+                             Foreground="#8B5CF6"
+                             Background="#1F2544"
+                             CornerRadius="2"
+                             Margin="0,16,0,0"/>
+
+                <TextBlock Grid.Row="2" Margin="0,10,0,0"
+                           Text="{Binding StatusMessage}"
+                           Foreground="#8B93B8"
+                           FontSize="12"/>
+
+                <TextBlock Grid.Row="3" Margin="0,6,0,0"
+                           Text="{Binding ErrorMessage}"
+                           Foreground="#F87171"
+                           FontSize="12"
+                           IsVisible="{Binding ErrorMessage, Converter={x:Static ObjectConverters.IsNotNull}}"/>
+            </Grid>
+        </Border>
+    </Panel>
 </Window>
