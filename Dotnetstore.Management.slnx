@@ -1,1 +1,18 @@
-<Solution />
+<Solution>
+  <Folder Name="/Organization/">
+    <Project Path="src/Dotnetstore.Management.Organization/Dotnetstore.Management.Organization.csproj" />
+    <Project Path="tests/Dotnetstore.Management.Organization.Tests/Dotnetstore.Management.Organization.Tests.csproj" />
+  </Folder>
+  <Folder Name="/Shared kernel/">
+    <Project Path="src/Dotnetstore.Management.SharedKernel/Dotnetstore.Management.SharedKernel.csproj" />
+    <Project Path="tests/Dotnetstore.Management.SharedKernel.Tests/Dotnetstore.Management.SharedKernel.Tests.csproj" />
+  </Folder>
+  <Folder Name="/Solution Items/">
+    <File Path=".gitignore" />
+    <File Path="Directory.Build.props" />
+  </Folder>
+  <Folder Name="/UI/">
+    <Project Path="src/Dotnetstore.Management.UI.GUI/Dotnetstore.Management.UI.GUI.csproj" />
+    <Project Path="tests/Dotnetstore.Management.UI.GUI.Tests/Dotnetstore.Management.UI.GUI.Tests.csproj" />
+  </Folder>
+</Solution>

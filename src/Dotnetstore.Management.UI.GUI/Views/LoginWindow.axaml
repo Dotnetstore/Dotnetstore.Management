@@ -1,0 +1,28 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:Dotnetstore.Management.UI.GUI.ViewModels"
+        xmlns:ui="using:FluentAvalonia.UI.Controls"
+        x:Class="Dotnetstore.Management.UI.GUI.Views.LoginWindow"
+        x:DataType="vm:LoginViewModel"
+        Title="Sign in"
+        Width="420" Height="360"
+        CanResize="False"
+        WindowStartupLocation="CenterScreen">
+    <StackPanel Margin="32" Spacing="14" VerticalAlignment="Center">
+        <TextBlock Text="Sign in" FontSize="24" FontWeight="SemiBold"/>
+        <TextBlock Text="Use your Dotnetstore account" Opacity="0.7"/>
+
+        <TextBox PlaceholderText="Email" Text="{Binding Email, Mode=TwoWay}"/>
+        <TextBox PlaceholderText="Password" PasswordChar="•" Text="{Binding Password, Mode=TwoWay}"/>
+
+        <TextBlock Text="{Binding ErrorMessage}"
+                   Foreground="IndianRed"
+                   IsVisible="{Binding ErrorMessage, Converter={x:Static ObjectConverters.IsNotNull}}"/>
+
+        <Button Content="Sign in"
+                Command="{Binding LoginCommand}"
+                HorizontalAlignment="Stretch"
+                HorizontalContentAlignment="Center"
+                Classes="accent"/>
+    </StackPanel>
+</Window>

@@ -1,0 +1,28 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:Dotnetstore.Management.UI.GUI.ViewModels"
+        xmlns:ui="using:FluentAvalonia.UI.Controls"
+        x:Class="Dotnetstore.Management.UI.GUI.Views.SplashWindow"
+        x:DataType="vm:SplashViewModel"
+        Title="Dotnetstore.Management"
+        Width="520" Height="300"
+        CanResize="False"
+        WindowStartupLocation="CenterScreen"
+        WindowDecorations="BorderOnly">
+    <Grid RowDefinitions="*,Auto,Auto,Auto" Margin="40">
+        <StackPanel Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" Spacing="8">
+            <TextBlock Text="Dotnetstore.Management"
+                       FontSize="28" FontWeight="SemiBold"
+                       HorizontalAlignment="Center"/>
+            <TextBlock Text="Starting up..."
+                       Opacity="0.7"
+                       HorizontalAlignment="Center"/>
+        </StackPanel>
+        <ProgressBar Grid.Row="1" Minimum="0" Maximum="100" Value="{Binding Progress}" Height="6"/>
+        <TextBlock Grid.Row="2" Margin="0,8,0,0" Text="{Binding StatusMessage}" Opacity="0.8"/>
+        <TextBlock Grid.Row="3" Margin="0,8,0,0"
+                   Text="{Binding ErrorMessage}"
+                   Foreground="IndianRed"
+                   IsVisible="{Binding ErrorMessage, Converter={x:Static ObjectConverters.IsNotNull}}"/>
+    </Grid>
+</Window>
