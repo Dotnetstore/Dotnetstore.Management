@@ -1,11 +1,11 @@
 using CommunityToolkit.Mvvm.ComponentModel;
-using Dotnetstore.Management.Organization.Data;
+using Dotnetstore.Management.SharedKernel.Persistence;
 using Dotnetstore.Management.UI.GUI.Services;
 
 namespace Dotnetstore.Management.UI.GUI.ViewModels;
 
 public sealed partial class SplashViewModel(
-    IDatabaseInitializer initializer,
+    IEnumerable<IModuleDatabaseInitializer> initializers,
     INavigationService navigation) : ViewModelBase
 {
     [ObservableProperty]
@@ -21,13 +21,27 @@ public sealed partial class SplashViewModel(
     {
         try
         {
-            var progress = new Progress<InitializationProgress>(p =>
+            var list = initializers.ToList();
+            if (list.Count == 0)
             {
-                ProgressValue = p.Value * 100.0;
-                StatusMessage = p.Message;
-            });
+                ProgressValue = 100.0;
+                navigation.ShowLogin();
+                return;
+            }
 
-            await initializer.InitializeAsync(progress, cancellationToken);
+            var slice = 1.0 / list.Count;
+            for (var i = 0; i < list.Count; i++)
+            {
+                var baseValue = i * slice;
+                var progress = new Progress<InitializationProgress>(p =>
+                {
+                    ProgressValue = (baseValue + p.Value * slice) * 100.0;
+                    StatusMessage = p.Message;
+                });
+
+                await list[i].InitializeAsync(progress, cancellationToken);
+            }
+
             await Task.Delay(300, cancellationToken);
             navigation.ShowLogin();
         }

@@ -2,6 +2,7 @@
 using Dotnetstore.Management.Organization.Data;
 using Dotnetstore.Management.Organization.Services;
 using Dotnetstore.Management.Organization.Users;
+using Dotnetstore.Management.SharedKernel.Persistence;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -14,14 +15,16 @@ public static class ServiceCollectionExtensions
         string connectionString)
     {
         services.AddDbContext<OrganizationDataContext>(options =>
-            options.UseSqlite(connectionString));
+            options.UseSqlite(connectionString, b =>
+                b.MigrationsHistoryTable("__EFMigrationsHistory_Organization")));
 
         services
             .AddScoped<IOrganizationUnitOfWork, OrganizationUnitOfWork>()
             .AddScoped<IUserRepository, UserRepository>()
             .AddScoped<IAuthenticationService, AuthenticationService>()
-            .AddScoped<IDatabaseInitializer, OrganizationDatabaseInitializer>();
+            .AddScoped<IModuleDatabaseInitializer, OrganizationDatabaseInitializer>();
 
         return services;
     }
 }
+

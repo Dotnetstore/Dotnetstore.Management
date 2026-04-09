@@ -1,4 +1,8 @@
 <Solution>
+  <Folder Name="/Contacts/">
+    <Project Path="src/Dotnetstore.Management.Contacts/Dotnetstore.Management.Contacts.csproj" />
+    <Project Path="tests/Dotnetstore.Management.Contacts.Tests/Dotnetstore.Management.Contacts.Tests.csproj" />
+  </Folder>
   <Folder Name="/Organization/">
     <Project Path="src/Dotnetstore.Management.Organization/Dotnetstore.Management.Organization.csproj" />
     <Project Path="tests/Dotnetstore.Management.Organization.Tests/Dotnetstore.Management.Organization.Tests.csproj" />

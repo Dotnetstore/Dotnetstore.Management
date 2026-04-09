@@ -1,5 +1,6 @@
 using Dotnetstore.Management.Organization.Data;
 using Dotnetstore.Management.Organization.Tests.Infrastructure;
+using Dotnetstore.Management.SharedKernel.Persistence;
 using Dotnetstore.Management.SharedKernel.Security;
 using Microsoft.EntityFrameworkCore;
 using Shouldly;

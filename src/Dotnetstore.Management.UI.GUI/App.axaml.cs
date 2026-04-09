@@ -1,6 +1,7 @@
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
+using Dotnetstore.Management.Contacts.Extensions;
 using Dotnetstore.Management.Organization.Extensions;
 using Dotnetstore.Management.SharedKernel.Extensions;
 using Dotnetstore.Management.UI.GUI.Services;
@@ -43,6 +44,7 @@ public partial class App : Application
 
         services.AddSharedKernel();
         services.AddOrganizationModule(AppPaths.SqliteConnectionString);
+        services.AddContactsModule(AppPaths.SqliteConnectionString);
 
         services.AddScoped<INavigationService, NavigationService>();
         services.AddScoped<SplashViewModel>();

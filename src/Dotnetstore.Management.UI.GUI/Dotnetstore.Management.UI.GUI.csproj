@@ -27,6 +27,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\Dotnetstore.Management.Contacts\Dotnetstore.Management.Contacts.csproj" />
       <ProjectReference Include="..\Dotnetstore.Management.Organization\Dotnetstore.Management.Organization.csproj" />
     </ItemGroup>
 </Project>

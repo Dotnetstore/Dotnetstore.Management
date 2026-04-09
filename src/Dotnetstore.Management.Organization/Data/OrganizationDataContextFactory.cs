@@ -12,7 +12,8 @@ internal sealed class OrganizationDataContextFactory : IDesignTimeDbContextFacto
     public OrganizationDataContext CreateDbContext(string[] args)
     {
         var options = new DbContextOptionsBuilder<OrganizationDataContext>()
-            .UseSqlite("Data Source=design-time.db")
+            .UseSqlite("Data Source=design-time.db", b =>
+                b.MigrationsHistoryTable("__EFMigrationsHistory_Organization"))
             .Options;
         return new OrganizationDataContext(options);
     }

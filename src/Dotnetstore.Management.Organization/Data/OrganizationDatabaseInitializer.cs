@@ -1,4 +1,5 @@
 using Dotnetstore.Management.Organization.Users;
+using Dotnetstore.Management.SharedKernel.Persistence;
 using Dotnetstore.Management.SharedKernel.Security;
 using Microsoft.EntityFrameworkCore;
 
@@ -6,7 +7,7 @@ namespace Dotnetstore.Management.Organization.Data;
 
 internal sealed class OrganizationDatabaseInitializer(
     OrganizationDataContext context,
-    IPasswordHasher passwordHasher) : IDatabaseInitializer
+    IPasswordHasher passwordHasher) : IModuleDatabaseInitializer
 {
     private const string InitialEmail = "hasse29@hotmail.com";
     private const string InitialFirstname = "Hans";
