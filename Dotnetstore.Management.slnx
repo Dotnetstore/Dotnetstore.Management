@@ -1,22 +1,27 @@
 <Solution>
-  <Folder Name="/Contacts/">
-    <Project Path="src/Dotnetstore.Management.Contacts/Dotnetstore.Management.Contacts.csproj" />
-    <Project Path="tests/Dotnetstore.Management.Contacts.Tests/Dotnetstore.Management.Contacts.Tests.csproj" />
+  <Folder Name="/Api/" />
+  <Folder Name="/Api/Department/">
+    <Project Path="src/Dotnetstore.Management.Api.Department/Dotnetstore.Management.Api.Department.csproj" />
+    <Project Path="tests/Dotnetstore.Management.Api.Department.Tests/Dotnetstore.Management.Api.Department.Tests.csproj" />
   </Folder>
-  <Folder Name="/Organization/">
-    <Project Path="src/Dotnetstore.Management.Organization/Dotnetstore.Management.Organization.csproj" />
-    <Project Path="tests/Dotnetstore.Management.Organization.Tests/Dotnetstore.Management.Organization.Tests.csproj" />
+  <Folder Name="/Api/Organization/">
+    <Project Path="src/Dotnetstore.Management.Api.Organization/Dotnetstore.Management.Api.Organization.csproj" />
+    <Project Path="tests/Dotnetstore.Management.Api.Organization.Tests/Dotnetstore.Management.Api.Organization.Tests.csproj" />
   </Folder>
-  <Folder Name="/Shared kernel/">
-    <Project Path="src/Dotnetstore.Management.SharedKernel/Dotnetstore.Management.SharedKernel.csproj" />
-    <Project Path="tests/Dotnetstore.Management.SharedKernel.Tests/Dotnetstore.Management.SharedKernel.Tests.csproj" />
+  <Folder Name="/Api/Shared Kernel/">
+    <Project Path="src/Dotnetstore.Management.Api.SharedKernel/Dotnetstore.Management.Api.SharedKernel.csproj" />
+    <Project Path="tests/Dotnetstore.Management.Api.SharedKernel.Tests/Dotnetstore.Management.Api.SharedKernel.Tests.csproj" />
   </Folder>
-  <Folder Name="/Solution Items/">
-    <File Path=".gitignore" />
-    <File Path="Directory.Build.props" />
+  <Folder Name="/Api/WebApi/">
+    <Project Path="src/Dotnetstore.Management.Api.WebApi/Dotnetstore.Management.Api.WebApi.csproj" />
+    <Project Path="tests/Dotnetstore.Management.Api.WebApi.Tests/Dotnetstore.Management.Api.WebApi.Tests.csproj" />
   </Folder>
-  <Folder Name="/UI/">
-    <Project Path="src/Dotnetstore.Management.UI.GUI/Dotnetstore.Management.UI.GUI.csproj" />
-    <Project Path="tests/Dotnetstore.Management.UI.GUI.Tests/Dotnetstore.Management.UI.GUI.Tests.csproj" />
+  <Folder Name="/Shared/" />
+  <Folder Name="/Shared/SDK/">
+    <Project Path="src/Dotnetstore.Management.Shared.SDK/Dotnetstore.Management.Shared.SDK.csproj" />
+    <Project Path="tests/Dotnetstore.Management.Shared.SDK.Tests/Dotnetstore.Management.Shared.SDK.Tests.csproj" />
+  </Folder>
+  <Folder Name="/Shared/TestHelper/">
+    <Project Path="tests/Dotnetstore.Management.Shared.TestHelper/Dotnetstore.Management.Shared.TestHelper.csproj" />
   </Folder>
 </Solution>
