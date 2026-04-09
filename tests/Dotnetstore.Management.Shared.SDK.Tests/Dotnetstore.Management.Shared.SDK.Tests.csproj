@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net10.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\src\Dotnetstore.Management.Shared.SDK\Dotnetstore.Management.Shared.SDK.csproj" />
+      <ProjectReference Include="..\Dotnetstore.Management.Shared.TestHelper\Dotnetstore.Management.Shared.TestHelper.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Microsoft.NET.Test.Sdk" Version="18.4.0" />
+    </ItemGroup>
+
+</Project>

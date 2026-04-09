@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Content Include="xunit.runner.json" CopyToOutputDirectory="PreserveNewest"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <Using Include="Xunit"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Shouldly" Version="4.3.0" />
+        <PackageReference Include="Testcontainers" Version="4.11.0" />
+        <PackageReference Include="Testcontainers.PostgreSql" Version="4.11.0" />
+        <PackageReference Include="TngTech.ArchUnitNET" Version="0.13.3" />
+        <PackageReference Include="TngTech.ArchUnitNET.xUnit" Version="0.13.3" />
+        <PackageReference Include="xunit.v3.mtp-v2" Version="3.2.2"/>
+    </ItemGroup>
+
+</Project>

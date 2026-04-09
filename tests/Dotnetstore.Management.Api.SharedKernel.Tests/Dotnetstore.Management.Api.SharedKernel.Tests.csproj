@@ -1,0 +1,9 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Dotnetstore.Management.Api.SharedKernel\Dotnetstore.Management.Api.SharedKernel.csproj" />
+    <ProjectReference Include="..\Dotnetstore.Management.Shared.TestHelper\Dotnetstore.Management.Shared.TestHelper.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="18.4.0" />
+  </ItemGroup>
+</Project>
